@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button btn;
     int counter = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         counter++;
         btn = findViewById(R.id.btn);
         btn.setText("This is a click number:" + counter);
-        if (counter < 7){
-            btn.setText("This is a click number:" + counter);
+        if (counter == 7) {
+            btn.setText("Enough to click. Go to new start!");
+            counter = 0;
+        }
+    }
 }
